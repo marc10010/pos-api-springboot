@@ -10,18 +10,8 @@
 	</parent>
 	
 	<artifactId>user-service</artifactId>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+	<packaging>jar</packaging>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>

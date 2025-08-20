@@ -5,16 +5,18 @@ public class ProductResponse {
     private String name;
     private double price;
     private int stock;
+    private boolean available;
 
     // Default constructor
     public ProductResponse() {}
 
     // Constructor with parameters
-    public ProductResponse(Long id, String name, double price, int stock) {
+    public ProductResponse(Long id, String name, double price, int stock, boolean available) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.available = available;
     }
 
     // Getters and Setters
@@ -48,5 +50,13 @@ public class ProductResponse {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }

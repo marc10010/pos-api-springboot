@@ -1,6 +1,6 @@
-package com.tienda.product.repository;
+package com.tienda.product_service.repository;
 
-import com.tienda.product.model.Product;
+import com.tienda.product_service.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

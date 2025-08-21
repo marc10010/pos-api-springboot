@@ -106,14 +106,14 @@ stop_service_by_port() {
 echo ""
 print_status "Deteniendo servicios en orden inverso..."
 
-# 5. Order Service (Puerto 8083)
-stop_service_by_port 8083 "Order Service"
+# 5. Order Service (Puerto 8084)
+stop_service_by_port 8084 "Order Service"
 
 # 4. Product Service (Puerto 8082)
 stop_service_by_port 8082 "Product Service"
 
-# 3. User Service (Puerto 8081)
-stop_service_by_port 8081 "User Service"
+# 3. User Service (Puerto 8083)
+stop_service_by_port 8083 "User Service"
 
 # 2. Gateway Service (Puerto 8080)
 stop_service_by_port 8080 "Gateway Service"
@@ -133,7 +133,7 @@ rm -f logs/*.pid
 # Mostrar estado de puertos
 echo "📊 Estado de puertos:"
 echo "===================="
-for port in 8761 8080 8081 8082 8083; do
+for port in 8761 8080 8082 8083 8084; do
     if lsof -ti:$port >/dev/null 2>&1; then
         echo -e "${RED}Puerto $port:${NC} En uso"
     else

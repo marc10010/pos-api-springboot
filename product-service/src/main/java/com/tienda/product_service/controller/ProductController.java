@@ -1,7 +1,7 @@
-package com.tienda.product.controller;
+package com.tienda.product_service.controller;
 
-import com.tienda.product.model.Product;
-import com.tienda.product.service.ProductService;
+import com.tienda.product_service.model.Product;
+import com.tienda.product_service.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

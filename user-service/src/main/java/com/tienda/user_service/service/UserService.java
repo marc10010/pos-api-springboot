@@ -1,7 +1,7 @@
-package com.tienda.user.service;
+package com.tienda.user_service.service;
 
-import com.tienda.user.model.User;
-import com.tienda.user.repository.UserRepository;
+import com.tienda.user_service.model.User;
+import com.tienda.user_service.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

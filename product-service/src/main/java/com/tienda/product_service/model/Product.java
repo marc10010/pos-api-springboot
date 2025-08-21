@@ -1,4 +1,4 @@
-package com.tienda.product.model;
+package com.tienda.product_service.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

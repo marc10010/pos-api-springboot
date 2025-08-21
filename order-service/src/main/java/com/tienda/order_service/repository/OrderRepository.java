@@ -1,6 +1,6 @@
-package com.tienda.order.repository;
+package com.tienda.order_service.repository;
 
-import com.tienda.order.model.Order;
+import com.tienda.order_service.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

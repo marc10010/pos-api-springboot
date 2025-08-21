@@ -1,4 +1,4 @@
-package com.tienda.user.model;
+package com.tienda.user_service.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

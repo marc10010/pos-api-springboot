@@ -1,7 +1,7 @@
-package com.tienda.user.controller;
+package com.tienda.user_service.controller;
 
-import com.tienda.user.model.User;
-import com.tienda.user.service.UserService;
+import com.tienda.user_service.model.User;
+import com.tienda.user_service.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
     
     private final UserService userService;

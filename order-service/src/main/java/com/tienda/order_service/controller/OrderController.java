@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 @Slf4j
 public class OrderController {
 

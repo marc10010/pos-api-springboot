@@ -42,7 +42,7 @@ start_service() {
     local service_dir=$2
     local port=$3
     
-    print_status "Iniciando $service_name en puerto $port..."
+    print_status "Compilando e iniciando $service_name en puerto $port..."
     
     if [ ! -d "$service_dir" ]; then
         print_error "Directorio $service_dir no encontrado!"
@@ -58,7 +58,18 @@ start_service() {
         return 0
     fi
     
+    # Compilar el servicio
+    print_status "Compilando $service_name..."
+    mvn clean install > "../logs/${service_name}_build.log" 2>&1
+    if [ $? -ne 0 ]; then
+        print_error "Error al compilar $service_name. Revisa los logs en logs/${service_name}_build.log"
+        cd ..
+        return 1
+    fi
+    print_success "$service_name compilado correctamente"
+    
     # Iniciar el servicio en background
+    print_status "Iniciando $service_name..."
     nohup mvn spring-boot:run > "../logs/$service_name.log" 2>&1 &
     local pid=$!
     
@@ -115,8 +126,8 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# 5. Order Service (Puerto 8083)
-start_service "Order Service" "order-service" 8083
+# 5. Order Service (Puerto 8084)
+start_service "Order Service" "order-service" 8084
 if [ $? -ne 0 ]; then
     print_error "Error al iniciar Order Service"
     exit 1

@@ -104,4 +104,22 @@ class UserServiceTest {
         // Assert
         verify(userRepository).deleteById(userId);
     }
+
+    @Test
+    void createUser_WhenEmailExists() {
+        // Arrange
+        String existingEmail = "john@example.com";
+        User existingUser = new User("John Doe", existingEmail);
+        User newUser = new User("Jane Doe", existingEmail); // Mismo email
+
+        when(userRepository.findByEmail(existingEmail)).thenReturn(Optional.of(existingUser));
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            userService.createUser(newUser);
+        });
+        
+        verify(userRepository).findByEmail(existingEmail);
+        verify(userRepository, never()).save(any(User.class));
+    }
 }
